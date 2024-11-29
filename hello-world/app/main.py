@@ -10,4 +10,4 @@ async def root():
     if torch.cuda.is_available():
         device = 'gpu'
     
-    return {"message": f"Hello world, I can run on {device}"}
+    return {"message": f"Hello world, I can run on {device}!"}
