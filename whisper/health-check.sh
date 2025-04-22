@@ -4,6 +4,6 @@ if [ -z "$DATACRUNCH_CONTAINER_URL" ] || [ -z "$DATACRUNCH_BEARER_TOKEN" ]; then
   exit 1
 fi
 
-curl -X GET "$DATACRUNCH_CONTAINER_URL/fastapi-uvicorn-whisper-test/health" \
+curl -X GET "$DATACRUNCH_CONTAINER_URL/health" \
 --header "Authorization: Bearer $DATACRUNCH_BEARER_TOKEN" \
 --header "Content-Type: application/json"

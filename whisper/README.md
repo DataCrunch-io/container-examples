@@ -23,7 +23,7 @@ When the container starts, it will fetch the model weights from Hugging Face. Th
 Once the container has been deployed on DataCrunch, and the endpoint is runnning, you can testing by running the following, which will send the `audio.wav` file to the endpoint for transcription:
 
 ```bash
-export DATACRUNCH_CONTAINER_URL=https://containers.datacrunch.io/<NAME_OF_YOUR_DEPLOYMENT>
+export DATACRUNCH_CONTAINER_URL=https://containers.datacrunch.io/<NAME_OF_YOUR_DEPLOYMENT>/generate
 export DATACRUNCH_BEARER_TOKEN=dc_<YOUR_BEARER_TOKEN>
 
 ./inference.sh
