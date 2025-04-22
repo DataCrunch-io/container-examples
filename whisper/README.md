@@ -1,6 +1,6 @@
-Whisper Container
+# Whisper Container
 
-Here is an example of fully operational Whisper-large-v3-turbo endpoint containerized for use with DataCrunch containers.
+Here is an example of fully operational [Whisper-large-v3-turbo](https://huggingface.co/openai/whisper-large-v3-turbo) endpoint containerized for use with DataCrunch containers.
 
 This container implements two endpoints:
 
