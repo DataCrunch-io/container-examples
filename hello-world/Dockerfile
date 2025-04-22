@@ -1,5 +1,7 @@
-#Use NVIDIA's official CUDA image
-FROM nvidia/cuda:12.6.2-cudnn-runtime-ubuntu22.04
+#Use a small base image to save space
+FROM python:3.11-slim
+
+WORKDIR /app
 
 # Install additional dependencies as needed
 RUN apt-get update && apt-get install -y \
@@ -9,9 +11,10 @@ RUN apt-get update && apt-get install -y \
 # Install required Python packages
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install torch --index-url https://download.pytorch.org/whl/cu124
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cu124
 
-WORKDIR /src
-COPY ./app /src/app
+COPY ./app/* .
 
-CMD ["fastapi", "run", "app/main.py"]
+EXPOSE 8989
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8989"]

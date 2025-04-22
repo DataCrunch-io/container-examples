@@ -4,7 +4,7 @@ import torch
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/hello-world")
 async def root():
     device = 'cpu'
     if torch.cuda.is_available():
